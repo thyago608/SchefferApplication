@@ -1,12 +1,12 @@
 import { Header } from "./components/Header";
-import { Home } from "./pages/Home";
+import { Routes } from "../routes";
 import "./styles/global.scss";
 
 export default function App() {
   return (
     <>
       <Header />
-      <Home />
+      <Routes />
     </>
   );
 }

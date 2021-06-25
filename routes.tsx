@@ -5,8 +5,10 @@ import { SelectTeam } from "./src/pages/SelectTeam";
 export function Routes() {
   return (
     <BrowserRouter>
-      <Route path="" exact component={Home} />
-      <Route path="" component={} />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/selectTeam" component={SelectTeam} />
+      </Switch>
     </BrowserRouter>
   );
 }
