@@ -7,11 +7,11 @@ export function Home() {
   const history = useHistory();
 
   function handleNavigateToSelectTeam() {
-    history.push("/selectTeam");
+    history.push("/select-team");
   }
 
   return (
-    <div id="page-home">
+    <div id="page" className="page-home">
       <Header />
       <main className="main-home">
         <Card title="Preventivas" onClick={handleNavigateToSelectTeam} />

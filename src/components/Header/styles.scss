@@ -1,15 +1,10 @@
 #component-header{
-  margin: 0 auto;
-
-  max-width: 1080px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  width: 100%;
 }
 
 .container-image-header{
-  max-width: 500px;
+  cursor: pointer;
+  display: block;
   height: 150px;
-
+  
 }

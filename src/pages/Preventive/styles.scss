@@ -1,17 +1,24 @@
-#page-preventive{
-  padding: 0 2rem;
+.page-preventive{
+  h1{
+    color: rgb(219, 193, 44);
+  }
 }
 
-.main-preventive{
-  margin: 0 auto;
-  max-width: 1080px;
+.header-preventive{
 
+  display: flex;
+  justify-content: flex-start;
+
+
+}
+.main-preventive{
+  margin-top: 3rem;
 }
 
 .preventive-completed{
-  > h1{
+  > h2{
     margin: 1rem 0 2rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   > .wrapper-cards-preventive-completed {
@@ -35,9 +42,9 @@
 }
 
 .preventive-accomplish{
-  > h1{
+  > h2{
     margin: 1rem 0 2rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 
     @media(max-width: 800px){
       text-align: center;

@@ -1,40 +1,24 @@
-import { useEffect, WheelEvent } from "react";
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Card } from "../../components/Card";
 import "./styles.scss";
 
-type PreventiveParams = {
+type Params = {
   team: string;
 };
 
 export function Preventive() {
-  function handleScrollMouse(event: any) {
-    if (event.deltaY > 0) {
-      event.target.scrollBy(300, 0);
-    } else {
-      event.target.scrollBy(-300, 0);
-    }
-  }
-
-  useEffect(() => {
-    const wrapperCardsCompleted = document.querySelector(
-      ".wrapper-cards-preventive-completed"
-    );
-
-    wrapperCardsCompleted?.addEventListener("wheel", handleScrollMouse);
-
-    return () => {
-      wrapperCardsCompleted?.removeEventListener("wheel", handleScrollMouse);
-    };
-  }, []);
+  const { team } = useParams<Params>();
 
   return (
-    <div id="page-preventive">
-      <Header />
+    <div id="page" className="page-preventive">
+      <div className="header-preventive">
+        <Header />
+      </div>
       <main className="main-preventive">
+        <h1>Equipe {team}</h1>
         <div className="preventive-completed">
-          <h1>Preventivas Concluídas</h1>
+          <h2>Preventivas Concluídas</h2>
 
           <div className="wrapper-cards-preventive-completed">
             <Card title="Ponto de Entrada 3" subtitle="AE - Sistema Azul" />
@@ -47,7 +31,7 @@ export function Preventive() {
         </div>
 
         <div className="preventive-accomplish">
-          <h1>Preventivas a realizar</h1>
+          <h2>Preventivas a realizar</h2>
 
           <div className="wrapper-cards-preventive-accomplish">
             <Card title="Ponto de Entrada 3" subtitle="AE - Sistema Azul" />
