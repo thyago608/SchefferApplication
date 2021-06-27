@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Card } from "../../components/Card";
 import "./styles.scss";
@@ -7,8 +9,32 @@ type Params = {
   team: string;
 };
 
+type Preventive = {
+  title: string;
+  subtitle: string;
+};
+
 export function Preventive() {
   const { team } = useParams<Params>();
+  const history = useHistory();
+  const [preventive, setPreventive] = useState<Preventive[]>([
+    { title: "Ponto de Entrada 3", subtitle: "TE - Sistema Verde" },
+    { title: "Ponto de Entrada 4", subtitle: "TE - Sistema Verde" },
+    { title: "Portal de Rejeição de Cargas", subtitle: "AE - Sistema Azul" },
+    { title: "Berço de Entrada 2", subtitle: "AE - Sistema Azul" },
+    { title: "Ponto de Entrada 6", subtitle: "TE - Sistema Verde" },
+    { title: "Ponto de Entrada CX Cheia", subtitle: "TE - Sistema Verde" },
+    { title: "Portal de Rejeição de Cargas", subtitle: "AE - Sistema Azul" },
+    { title: "Berço de Entrada 2", subtitle: "AE - Sistema Azul" },
+    { title: "Ponto de Entrada 6", subtitle: "TE - Sistema Verde" },
+    { title: "Ponto de Entrada CX Cheia", subtitle: "TE - Sistema Verde" },
+    { title: "Ponto de Entrada 6", subtitle: "TE - Sistema Verde" },
+    { title: "Ponto de Entrada CX Cheia", subtitle: "TE - Sistema Verde" }
+  ]);
+
+  function handleSelectionPreventive(preventive: string, local: string) {
+    history.push(`/select-team/${team}/${preventive}/${local}`);
+  }
 
   return (
     <div id="page" className="page-preventive">
@@ -22,11 +48,20 @@ export function Preventive() {
 
           <div className="wrapper-cards-preventive-completed">
             <Card title="Ponto de Entrada 3" subtitle="AE - Sistema Azul" />
+            <Card
+              title="Portal de Rejeição de Cargas"
+              subtitle="TE - Sistema Verde"
+            />
+            <Card
+              title="Ponto de Entrada CX Cheia"
+              subtitle="AE - Sistema Azul"
+            />
             <Card title="Berço de Entrada 1" subtitle="TE - Sistema Verde" />
             <Card title="Ponto de Entrada 3" subtitle="AE - Sistema Azul" />
-            <Card title="Berço de Entrada 1" subtitle="TE - Sistema Verde" />
-            <Card title="Ponto de Entrada 3" subtitle="AE - Sistema Azul" />
-            <Card title="Berço de Entrada 1" subtitle="TE - Sistema Verde" />
+            <Card
+              title="Ponto de Entrada CX Cheia"
+              subtitle="TE - Sistema Azu"
+            />
           </div>
         </div>
 
@@ -34,39 +69,21 @@ export function Preventive() {
           <h2>Preventivas a realizar</h2>
 
           <div className="wrapper-cards-preventive-accomplish">
-            <Card title="Ponto de Entrada 3" subtitle="AE - Sistema Azul" />
-            <Card title="Berço de Entrada 1" subtitle="TE - Sistema Verde" />
-            <Card
-              title="Ponto de Entrada CX Cheia"
-              subtitle="TE - Sistema Verde"
-            />
-            <Card title="Berço de Entrada 2" subtitle="AE - Sistema Azul" />
-            <Card
-              title="Portal de Rejeição de Cargas"
-              subtitle="TE - Sistema Verde"
-            />
-            <Card title="Ponto de Entrega 3" subtitle="TE - Sistema Verde" />
-            <Card
-              title="Ponto de Entrada CX Cheia"
-              subtitle="AE - Sistema Azul"
-            />
-            <Card title="Berço de Entrada 2" subtitle="AE - Sistema Azul" />
-            <Card
-              title="Portal de Rejeição de Cargas"
-              subtitle="TE - Sistema Verde"
-            />
-            <Card title="Ponto de Entrega 3" subtitle="TE - Sistema Verde" />
-            <Card
-              title="Ponto de Entrada CX Cheia"
-              subtitle="AE - Sistema Azul"
-            />
-            <Card title="Berço de Entrada 2" subtitle="TE - Sistema Verde" />
-            <Card
-              title="Portal de Rejeição de Cargas"
-              subtitle="TE - Sistema Verde"
-            />
-            <Card title="Ponto de Entrega 3" subtitle="TE - Sistema Verde" />
-            <Card title="Ponto de Entrega 3" subtitle="TE - Sistema Verde" />
+            {preventive.map((preventive) => {
+              return (
+                <Card
+                  key={preventive.title}
+                  title={preventive.title}
+                  subtitle={preventive.subtitle}
+                  onClick={() =>
+                    handleSelectionPreventive(
+                      preventive.title,
+                      preventive.subtitle
+                    )
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </main>

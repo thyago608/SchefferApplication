@@ -12,7 +12,7 @@ export function Routes() {
         <Route path="/select-team" exact component={SelectTeam} />`
         <Route path="/select-team/:team" exact component={Preventive} />
         <Route
-          path="/select-team/:team/:preventive"
+          path="/select-team/:team/:preventive/:local"
           component={PreventiveSelected}
         />
       </Switch>
