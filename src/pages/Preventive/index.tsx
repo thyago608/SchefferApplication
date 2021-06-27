@@ -14,9 +14,9 @@ export function Preventive() {
     <div id="page" className="page-preventive">
       <div className="header-preventive">
         <Header />
+        <h1>Equipe {team}</h1>
       </div>
       <main className="main-preventive">
-        <h1>Equipe {team}</h1>
         <div className="preventive-completed">
           <h2>Preventivas Concluídas</h2>
 
@@ -65,6 +65,7 @@ export function Preventive() {
               title="Portal de Rejeição de Cargas"
               subtitle="TE - Sistema Verde"
             />
+            <Card title="Ponto de Entrega 3" subtitle="TE - Sistema Verde" />
             <Card title="Ponto de Entrega 3" subtitle="TE - Sistema Verde" />
           </div>
         </div>

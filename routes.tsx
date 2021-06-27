@@ -10,8 +10,11 @@ export function Routes() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/select-team" exact component={SelectTeam} />`
-        <Route path="/select-team/:team" component={Preventive} />
-        <Route path="/" component={PreventiveSelected} />
+        <Route path="/select-team/:team" exact component={Preventive} />
+        <Route
+          path="/select-team/:team/:preventive"
+          component={PreventiveSelected}
+        />
       </Switch>
     </BrowserRouter>
   );
