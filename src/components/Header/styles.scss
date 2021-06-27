@@ -1,19 +1,15 @@
-header{
+#component-header{
   margin: 0 auto;
 
   max-width: 1080px;
-  height: 10rem;
-
   display: flex;
   justify-content: center;
+  align-items: center;
+
 }
 
-.container-image{
+.container-image-header{
   max-width: 500px;
-  height: 100%;
- 
-  > img {
-      object-fit: contain;
-  }
+  height: 150px;
 
 }

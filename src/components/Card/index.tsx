@@ -1,19 +1,22 @@
-import logo from "../../assets/logo-scheffer.png";
+import { ButtonHTMLAttributes } from "react";
+import logoScheffer from "../../assets/images/icon-scheffer-secundary.svg";
 import "./styles.scss";
 
-interface Props {
+interface CardProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
+  subtitle?: string;
 }
 
-export function Card({ title }: Props) {
+export function Card({ title, subtitle, ...rest }: CardProps) {
   return (
-    <section>
-      <header>
-        <h1>
-          <img src={logo} alt="logo" />
-        </h1>
-      </header>
-      <span>{title}</span>
-    </section>
+    <button id="card-component" {...rest}>
+      <div>
+        <div className="container-image-card">
+          <img src={logoScheffer} alt="Scheffer icon" />
+        </div>
+        <span>{title}</span>
+      </div>
+      {subtitle && <span className="subtitle">{subtitle}</span>}
+    </button>
   );
 }
