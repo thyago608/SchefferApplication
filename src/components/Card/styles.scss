@@ -1,6 +1,5 @@
 #card-component{
   border: 0;
-
   width: 15rem;
   height: 15rem;
   background: var(--brown-500);
@@ -25,7 +24,11 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
+      
     }
+    display: flex;
+    justify-content: center;
+
 }
 
 span{

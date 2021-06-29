@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Header } from "../../components/Header";
 import logoImg from "../../assets/images/icon-scheffer-secundary.svg";
 import "./styles.scss";
+import { Button } from "../../components/Button";
 
 type Params = {
   preventive: string;
@@ -25,6 +26,27 @@ export function PreventiveSelected() {
             <a href="#">Ver detalhes</a>
           </div>
         </div>
+
+        <form className="form-preventive-selected">
+          <div className="wrapper-date">
+            <span>Data de conclusão:</span>
+            <div className="container-input-block">
+              <div className="input-block">
+                <label htmlFor="day">Dia</label>
+                <input type="text" id="day" />
+              </div>
+              <div className="input-block">
+                <label htmlFor="month">Mês</label>
+                <input type="text" id="month" />
+              </div>
+              <div className="input-block">
+                <label htmlFor="year">Ano</label>
+                <input type="text" id="year" />
+              </div>
+            </div>
+          </div>
+          <Button title="Enviar" />
+        </form>
       </main>
     </div>
   );

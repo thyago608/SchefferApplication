@@ -10,7 +10,7 @@ interface CardProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export function Card({ title, subtitle, ...rest }: CardProps) {
   return (
     <button id="card-component" {...rest}>
-      <div>
+      <div className="card">
         <div className="container-image-card">
           <img src={logoScheffer} alt="Scheffer icon" />
         </div>

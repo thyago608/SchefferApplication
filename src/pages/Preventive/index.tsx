@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Card } from "../../components/Card";
+import Slider from "react-slick";
 import "./styles.scss";
 
 type Params = {
@@ -32,6 +33,14 @@ export function Preventive() {
     { title: "Ponto de Entrada CX Cheia", subtitle: "TE - Sistema Verde" }
   ]);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 4,
+    slidesToShow: 4
+  };
+
   function handleSelectionPreventive(preventive: string, local: string) {
     history.push(`/select-team/${team}/${preventive}/${local}`);
   }
@@ -46,7 +55,7 @@ export function Preventive() {
         <div className="preventive-completed">
           <h2>Preventivas Concluídas</h2>
 
-          <div className="wrapper-cards-preventive-completed">
+          <Slider {...settings} className="slider">
             <Card title="Ponto de Entrada 3" subtitle="AE - Sistema Azul" />
             <Card
               title="Portal de Rejeição de Cargas"
@@ -62,8 +71,9 @@ export function Preventive() {
               title="Ponto de Entrada CX Cheia"
               subtitle="TE - Sistema Azu"
             />
-          </div>
+          </Slider>
         </div>
+        {/* </div> */}
 
         <div className="preventive-accomplish">
           <h2>Preventivas a realizar</h2>

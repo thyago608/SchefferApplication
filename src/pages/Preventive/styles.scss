@@ -43,28 +43,14 @@
 
 .preventive-completed{
   margin: 5rem 0 2rem;
-  
+
   > h2{
     font-size: 1.7rem;
+    margin-bottom: 2rem;
   }
 
-  > .wrapper-cards-preventive-completed {
-    margin-top: 2rem;
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-   
-    &::-webkit-scrollbar{
-      width: 0;
-    }
-
-    #card-component{
-      flex: none;
-
-      & + #card-component{
-        margin: 0 1rem;
-      }
-    }
+  #card-component{
+    border: 1px solid rgb(100, 100, 100);
   }
 }
 
